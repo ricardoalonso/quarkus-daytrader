@@ -7,8 +7,8 @@ package io.debezium.examples.outbox.trade.messagelog;
 import java.time.Instant;
 import java.util.UUID;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @Entity
 public class ConsumedMessage {

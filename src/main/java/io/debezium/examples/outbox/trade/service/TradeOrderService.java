@@ -7,12 +7,7 @@ package io.debezium.examples.outbox.trade.service;
 
 import java.util.Date;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.transaction.Transactional;
-import javax.transaction.Transactional.TxType;
+
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,6 +15,12 @@ import org.slf4j.LoggerFactory;
 import io.debezium.examples.outbox.trade.model.TradeOrder;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mutiny.core.eventbus.EventBus;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.transaction.Transactional;
+import jakarta.transaction.Transactional.TxType;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;

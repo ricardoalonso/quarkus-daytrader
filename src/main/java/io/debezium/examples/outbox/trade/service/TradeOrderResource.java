@@ -9,7 +9,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.MediaType;
 
-import org.jboss.resteasy.annotations.SseElementType;
+import org.jboss.resteasy.reactive.RestStreamElementType;
 
 import io.debezium.examples.outbox.trade.model.TradeOrder;
 import io.smallrye.mutiny.Multi;
@@ -25,7 +25,7 @@ public class TradeOrderResource {
     @GET
     @Path("/stream")
     @Produces(MediaType.SERVER_SENT_EVENTS)
-    @SseElementType(MediaType.APPLICATION_JSON)
+    @RestStreamElementType(MediaType.APPLICATION_JSON)
     public Multi<JsonObject> stream()
     {
         return eventBus.<JsonObject>consumer("order_stream")
